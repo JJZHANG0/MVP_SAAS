@@ -5,6 +5,7 @@ import com.toolfix.domain.Product;
 import com.toolfix.repository.ManualRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 import org.springframework.scheduling.annotation.Async;
@@ -61,7 +62,7 @@ public class MockManualParsingService {
     }
     
     private String extractTextFromPdf(String filePath) throws IOException {
-        try (PDDocument document = PDDocument.load(new File(filePath))) {
+        try (PDDocument document = Loader.loadPDF(new File(filePath))) {
             PDFTextStripper stripper = new PDFTextStripper();
             return stripper.getText(document);
         }

@@ -4,6 +4,7 @@ import com.toolfix.domain.*;
 import com.toolfix.dto.ApiResponse;
 import com.toolfix.repository.*;
 import com.toolfix.service.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
