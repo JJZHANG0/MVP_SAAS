@@ -27,7 +27,6 @@ import java.util.UUID;
 @RequestMapping("/manuals")
 @RequiredArgsConstructor
 @Slf4j
-@CrossOrigin(origins = "*")
 public class ManualController {
     
     private final ManualRepository manualRepository;

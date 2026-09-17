@@ -16,7 +16,6 @@ import java.util.List;
 @RequestMapping("/products")
 @RequiredArgsConstructor
 @Slf4j
-@CrossOrigin(origins = "*")
 public class ProductController {
     
     private final ProductRepository productRepository;

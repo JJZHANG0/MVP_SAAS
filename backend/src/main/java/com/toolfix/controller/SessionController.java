@@ -24,7 +24,6 @@ import java.util.Map;
 @RequestMapping("/sessions")
 @RequiredArgsConstructor
 @Slf4j
-@CrossOrigin(origins = "*")
 public class SessionController {
     
     private final DiagnosisSessionRepository sessionRepository;

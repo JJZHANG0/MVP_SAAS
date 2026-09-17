@@ -17,7 +17,6 @@ import java.util.UUID;
 @RequestMapping("/shops")
 @RequiredArgsConstructor
 @Slf4j
-@CrossOrigin(origins = "*")
 public class ShopController {
     
     private final ShopRepository shopRepository;

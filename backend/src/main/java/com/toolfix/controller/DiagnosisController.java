@@ -26,7 +26,6 @@ import java.util.*;
 @RequestMapping("/diagnosis")
 @RequiredArgsConstructor
 @Slf4j
-@CrossOrigin(origins = "*")
 public class DiagnosisController {
     
     private final DiagnosisSessionRepository sessionRepository;

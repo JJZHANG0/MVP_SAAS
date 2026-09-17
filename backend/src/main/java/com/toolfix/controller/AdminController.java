@@ -23,7 +23,6 @@ import java.util.Map;
 @RequestMapping("/admin")
 @RequiredArgsConstructor
 @Slf4j
-@CrossOrigin(origins = "*")
 public class AdminController {
     
     private final KnowledgeBaseRepository knowledgeBaseRepository;
