@@ -20,6 +20,18 @@ ToolFix 是一个面向跨境电商卖家的 AI 售后诊断 SaaS 平台 Demo。
 
 ---
 
+## 🌐 在线演示
+
+**静态前端 Demo**（GitHub Pages 托管）：
+
+- 🔗 **演示首页**: https://jjzhang0.github.io/MVP_SAAS/
+- 📊 **管理后台**: https://jjzhang0.github.io/MVP_SAAS/admin/
+- 💬 **消费者 H5**: https://jjzhang0.github.io/MVP_SAAS/h5/
+
+> ⚠️ **重要说明**：GitHub Pages 仅支持静态文件托管。在线演示仅展示前端 UI/UX 设计，后端 API（Spring Boot、MySQL、Redis）需要单独部署。完整功能请使用 Docker Compose 本地运行。
+
+---
+
 ## 🏗️ 技术架构
 
 ```
@@ -125,6 +137,23 @@ cd h5
 npm install
 npm run dev
 ```
+
+### 方式三：GitHub Pages 静态部署（仅前端 UI 演示）
+
+本项目已配置 GitHub Actions 自动部署到 GitHub Pages：
+
+```bash
+# 推送到 main 分支会自动触发部署
+git push origin main
+
+# 部署完成后访问：
+# https://jjzhang0.github.io/MVP_SAAS/
+```
+
+**限制说明**：
+- ✅ 可展示：前端 UI/UX 设计、布局、交互、样式
+- ❌ 无法使用：API 调用、数据存储、AI 诊断、会话管理
+- 💡 **完整功能**：请使用 Docker Compose 本地部署
 
 ### 初始数据
 
