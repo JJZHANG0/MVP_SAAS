@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Build outputs
+dist/
+build/
+target/
+*.jar
+!gradle/wrapper/*.jar
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Environment
+.env
+.env.local
+
+# Uploads
+uploads/
+/tmp/
+
+# Database
+*.db
+*.sqlite
+
+# Maven
+.mvn/
+!.mvn/wrapper/maven-wrapper.jar
