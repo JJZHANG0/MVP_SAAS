@@ -148,3 +148,119 @@ onMounted(() => {
   }
 })
 </script>
+
+<style scoped>
+.guide-page {
+  min-height: 100vh;
+  background: var(--bg-base);
+  padding: var(--space-6) var(--space-4);
+  padding-bottom: calc(var(--space-8) + env(safe-area-inset-bottom));
+}
+
+/* Premium Header with Gradient */
+.guide-header {
+  text-align: center;
+  padding: var(--space-6) var(--space-4);
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-hover) 100%);
+  border-radius: var(--radius-lg);
+  color: var(--text-inverse);
+  margin: 0 -16px var(--space-6);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.guide-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+}
+
+.guide-header h2 {
+  position: relative;
+  z-index: 1;
+}
+
+.guide-header p {
+  position: relative;
+  z-index: 1;
+}
+
+/* Guide Steps */
+.guide-step {
+  background: var(--bg-elevated);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-3);
+  border: 1px solid var(--neutral-200);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.guide-step:active {
+  transform: scale(0.99);
+  box-shadow: var(--shadow-xs);
+}
+
+.guide-step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-hover) 100%);
+  color: var(--text-inverse);
+  font-weight: var(--font-bold);
+  font-size: var(--text-sm);
+  margin-right: var(--space-3);
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+/* Placeholder Media */
+.placeholder-media {
+  background: var(--bg-chat);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  text-align: center;
+  color: var(--text-tertiary);
+  margin-top: var(--space-3);
+  border: 2px dashed var(--neutral-300);
+}
+
+/* Feedback Buttons */
+.feedback-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+/* Enhanced Information Boxes */
+.guide-page h3 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.guide-page > div {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>

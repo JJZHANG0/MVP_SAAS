@@ -1,15 +1,18 @@
 <template>
   <el-container class="layout-container">
-    <el-aside width="240px" style="background: white; box-shadow: 2px 0 8px rgba(0,0,0,0.05);">
-      <div style="padding: 20px; text-align: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-        <h2 style="color: white; margin: 0; font-size: 24px;">🔧 ToolFix</h2>
-        <p style="color: rgba(255,255,255,0.9); margin: 4px 0 0; font-size: 12px;">AI售后诊断系统</p>
+    <el-aside width="240px" class="sidebar glass">
+      <div class="sidebar-header">
+        <div class="brand-icon">
+          <el-icon size="28"><Tools /></el-icon>
+        </div>
+        <h2 class="brand-title">ToolFix</h2>
+        <p class="brand-subtitle">AI售后诊断系统</p>
       </div>
       
       <el-menu
         :default-active="activeMenu"
         router
-        style="border-right: none;"
+        class="sidebar-menu"
       >
         <el-menu-item index="/">
           <el-icon><DataAnalysis /></el-icon>
@@ -43,12 +46,18 @@
     </el-aside>
     
     <el-container>
-      <el-header style="background: white; box-shadow: 0 1px 4px rgba(0,0,0,0.05); padding: 0 24px; display: flex; align-items: center; justify-content: space-between;">
-        <div style="font-size: 18px; font-weight: 600; color: #303133;">
+      <el-header class="top-header glass">
+        <div class="header-title">
           {{ pageTitle }}
         </div>
         <el-badge :value="transferredCount" :hidden="transferredCount === 0" type="danger">
-          <el-button type="danger" :icon="Bell" @click="showTransferred" circle />
+          <el-button 
+            type="danger" 
+            :icon="Bell" 
+            @click="showTransferred" 
+            circle 
+            class="notification-btn"
+          />
         </el-badge>
       </el-header>
       
@@ -62,7 +71,7 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { Bell } from '@element-plus/icons-vue'
+import { Bell, Tools } from '@element-plus/icons-vue'
 import api from '../api'
 
 const route = useRoute()
@@ -105,3 +114,127 @@ onMounted(() => {
   setInterval(loadTransferredCount, 30000)
 })
 </script>
+
+<style scoped>
+.layout-container {
+  height: 100vh;
+  background: var(--bg-base);
+}
+
+/* Sidebar with glass effect */
+.sidebar {
+  border-right: 1px solid var(--glass-border);
+  position: relative;
+}
+
+.sidebar-header {
+  padding: var(--space-8) var(--space-6);
+  text-align: center;
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-hover) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-10%, -10%); }
+}
+
+.brand-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto var(--space-3);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-inverse);
+  backdrop-filter: blur(var(--blur-sm));
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: var(--shadow-md);
+}
+
+.brand-title {
+  color: var(--text-inverse);
+  margin: 0;
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  letter-spacing: -0.02em;
+}
+
+.brand-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  margin: var(--space-1) 0 0;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+}
+
+.sidebar-menu {
+  background: transparent;
+  border-right: none;
+  padding: var(--space-4) 0;
+}
+
+/* Top header with glass effect */
+.top-header {
+  border-bottom: 1px solid var(--glass-border);
+  padding: 0 var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.header-title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.notification-btn {
+  transition: all var(--transition-base);
+}
+
+.notification-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Main content */
+.main-content {
+  padding: var(--space-6);
+  overflow-y: auto;
+  background: var(--bg-base);
+}
+
+/* Smooth scrolling */
+.main-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background: var(--neutral-300);
+  border-radius: var(--radius-full);
+}
+
+.main-content::-webkit-scrollbar-thumb:hover {
+  background: var(--neutral-400);
+}
+</style>

@@ -1,0 +1,295 @@
+/* =========================================
+   Vant Theme Overrides
+   Premium Mobile Chat Experience
+   ========================================= */
+
+:root {
+  /* Primary colors */
+  --van-primary-color: #6366f1;
+  --van-success-color: #10b981;
+  --van-warning-color: #f59e0b;
+  --van-danger-color: #ef4444;
+  --van-info-color: #3b82f6;
+  
+  /* Text colors */
+  --van-text-color: #171717;
+  --van-text-color-2: #525252;
+  --van-text-color-3: #a3a3a3;
+  
+  /* Background */
+  --van-background: #fafafa;
+  --van-background-2: #f5f5f5;
+  
+  /* Border */
+  --van-border-color: #e5e5e5;
+  
+  /* Typography */
+  --van-font-size-xs: 12px;
+  --van-font-size-sm: 13px;
+  --van-font-size-md: 14px;
+  --van-font-size-lg: 16px;
+  
+  --van-font-bold: 600;
+  
+  /* Radius */
+  --van-radius-sm: 8px;
+  --van-radius-md: 12px;
+  --van-radius-lg: 16px;
+  --van-radius-max: 9999px;
+  
+  /* Spacing */
+  --van-padding-base: 4px;
+  --van-padding-xs: 8px;
+  --van-padding-sm: 12px;
+  --van-padding-md: 16px;
+  --van-padding-lg: 24px;
+  --van-padding-xl: 32px;
+  
+  /* Animation */
+  --van-duration-base: 0.2s;
+  --van-duration-fast: 0.15s;
+  --van-animation-timing-function-enter: cubic-bezier(0.4, 0, 0.2, 1);
+  --van-animation-timing-function-leave: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== NavBar Component ===== */
+.van-nav-bar {
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+@supports (backdrop-filter: blur(12px)) {
+  .van-nav-bar {
+    backdrop-filter: blur(12px) saturate(180%);
+  }
+}
+
+.van-nav-bar__title {
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--van-text-color);
+}
+
+.van-nav-bar__arrow,
+.van-nav-bar__text {
+  color: var(--van-primary-color);
+  font-weight: 500;
+}
+
+/* ===== Button Component ===== */
+.van-button {
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+}
+
+.van-button--primary {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+.van-button--primary:active {
+  transform: scale(0.98);
+  box-shadow: 0 1px 4px rgba(99, 102, 241, 0.3);
+}
+
+.van-button--default {
+  background: var(--van-background-2);
+  color: var(--van-text-color);
+  border: 1px solid var(--van-border-color);
+}
+
+.van-button--large {
+  height: 48px;
+  font-size: 16px;
+}
+
+/* ===== Field/Input Component ===== */
+.van-field {
+  border-radius: 12px;
+  background: var(--van-background);
+  border: 1px solid var(--van-border-color);
+  transition: all 0.15s;
+}
+
+.van-field--focused {
+  border-color: var(--van-primary-color);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.van-field__control {
+  font-size: 15px;
+  color: var(--van-text-color);
+}
+
+.van-field__control::placeholder {
+  color: var(--van-text-color-3);
+}
+
+/* ===== Cell Component ===== */
+.van-cell {
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: background 0.15s;
+}
+
+.van-cell:active {
+  background: var(--van-background-2);
+}
+
+.van-cell__title {
+  font-weight: 500;
+  color: var(--van-text-color);
+}
+
+.van-cell__value {
+  color: var(--van-text-color-2);
+}
+
+/* ===== Dialog Component ===== */
+.van-dialog {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.van-dialog__header {
+  font-weight: 600;
+  font-size: 18px;
+  padding-top: 24px;
+}
+
+.van-dialog__message {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--van-text-color-2);
+}
+
+.van-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+/* ===== Popup Component ===== */
+.van-popup {
+  border-radius: 16px 16px 0 0;
+}
+
+.van-popup--bottom {
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Uploader Component ===== */
+.van-uploader__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.van-uploader__preview {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.van-uploader__upload {
+  border-radius: 12px;
+  border: 2px dashed var(--van-border-color);
+  background: var(--van-background);
+  transition: all 0.15s;
+}
+
+.van-uploader__upload:active {
+  border-color: var(--van-primary-color);
+  background: rgba(99, 102, 241, 0.05);
+}
+
+/* ===== Image Component ===== */
+.van-image {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.van-image__error,
+.van-image__loading {
+  background: var(--van-background-2);
+}
+
+/* ===== Loading Component ===== */
+.van-loading__spinner {
+  color: var(--van-primary-color);
+}
+
+/* ===== Empty Component ===== */
+.van-empty {
+  padding: 48px 24px;
+}
+
+.van-empty__description {
+  font-size: 14px;
+  color: var(--van-text-color-2);
+  margin-top: 16px;
+}
+
+/* ===== Tag Component ===== */
+.van-tag {
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 4px 12px;
+  border: 1px solid transparent;
+}
+
+.van-tag--success {
+  background: #d1fae5;
+  color: #10b981;
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.van-tag--warning {
+  background: #fef3c7;
+  color: #b45309;
+  border-color: rgba(245, 158, 11, 0.2);
+}
+
+.van-tag--danger {
+  background: #fee2e2;
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+/* ===== ActionSheet Component ===== */
+.van-action-sheet {
+  border-radius: 16px 16px 0 0;
+}
+
+.van-action-sheet__item {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 16px;
+  transition: background 0.15s;
+}
+
+.van-action-sheet__item:active {
+  background: var(--van-background-2);
+}
+
+/* ===== Steps Component ===== */
+.van-step__circle {
+  background: var(--van-primary-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(99, 102, 241, 0.2);
+}
+
+.van-step--finish .van-step__circle {
+  background: var(--van-success-color);
+}
+
+/* ===== Progress Component ===== */
+.van-progress {
+  border-radius: 9999px;
+}
+
+.van-progress__portion {
+  border-radius: 9999px;
+}

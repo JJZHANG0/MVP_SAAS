@@ -225,3 +225,99 @@ onMounted(() => {
   loadDashboard()
 })
 </script>
+
+<style scoped>
+/* Stat Cards with Glass Effect */
+.stat-card {
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  color: var(--text-inverse);
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-hover) 100%);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(30%, -30%);
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.success-card {
+  background: linear-gradient(135deg, var(--color-success) 0%, #059669 100%);
+}
+
+.warning-card {
+  background: linear-gradient(135deg, var(--color-warning) 0%, #d97706 100%);
+}
+
+.danger-card {
+  background: linear-gradient(135deg, var(--color-error) 0%, #dc2626 100%);
+}
+
+/* Enhanced Card Shadows */
+.card-shadow {
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--neutral-200);
+  transition: all var(--transition-base);
+}
+
+.card-shadow:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--neutral-300);
+  transform: translateY(-2px);
+}
+
+/* Badge Styles */
+.badge-success,
+.badge-warning,
+.badge-danger,
+.badge-info {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  line-height: 1;
+  border: 1px solid transparent;
+}
+
+.badge-success {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.badge-warning {
+  background: var(--color-warning-bg);
+  color: #b45309;
+  border-color: rgba(245, 158, 11, 0.2);
+}
+
+.badge-danger {
+  background: var(--color-error-bg);
+  color: var(--color-error);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.badge-info {
+  background: var(--color-info-bg);
+  color: var(--color-info);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+</style>

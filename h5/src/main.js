@@ -5,6 +5,8 @@ import 'vant/lib/index.css'
 import router from './router'
 import App from './App.vue'
 import './style.css'
+import './styles/theme.css'
+import './styles/vant-overrides.css'
 
 const app = createApp(App)
 const pinia = createPinia()
